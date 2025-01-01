@@ -39,9 +39,9 @@ Remove everything above the line from your README, and your good to go.
 
 --package-description--
 
-![NPM Version](https://img.shields.io/npm/v/--package-name--?style=flat-square&label=NPM%20Version&labelColor=cc3838&color=f0f0f0)
-![NPM Downloads](https://img.shields.io/npm/d18m/--package-name--?style=flat-square&label=NPM%20Downloads&labelColor=cc3838&color=f0f0f0)
-![License](https://img.shields.io/github/license/gavinhsmith/--package-name--?style=flat-square&label=Licence&color=f0f0f0)
+[![NPM Version](https://img.shields.io/npm/v/%40gavinhsmith%2F--package-name--?style=flat-square&label=NPM%20Version&labelColor=cc3838&color=f0f0f0)](https://www.npmjs.com/package/@gavinhsmith/--package-name--)
+[![NPM Downloads](https://img.shields.io/npm/d18m/%40gavinhsmith%2F--package-name--?style=flat-square&label=NPM%20Downloads&labelColor=cc3838&color=f0f0f0)](https://www.npmjs.com/package/@gavinhsmith/--package-name--)
+[![License](https://img.shields.io/github/license/gavinhsmith/--package-name--?style=flat-square&label=Licence&color=f0f0f0)](https://github.com/gavinhsmith/--package-name--?tab=MIT-1-ov-file)
 
 ## Install
 
