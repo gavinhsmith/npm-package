@@ -13,6 +13,7 @@ concurrency:
 jobs:
   build:
     name: "CI Testing"
+    if: github.repository == 'gavinhsmith/--package-name--'
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
