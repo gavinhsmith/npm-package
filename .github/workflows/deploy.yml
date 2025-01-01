@@ -1,0 +1,98 @@
+name: Deploy to NPM/GitHub 🚀
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    name: "Build Module 🚧"
+    if: github.repository == 'gavinhsmith/--package-name--'
+    environment: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+      - name: "Setup Node v${{ vars.NODE_VERSION }}"
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+      - name: "[ACT] Install Yarn"
+        if: ${{env.ACT}}
+        run: npm install -g yarn
+      - name: "Install Packages"
+        run: yarn install
+      - name: "Build Module"
+        run: yarn run build --print-label
+      - name: "Export as Artifact"
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: "[ACT] Uninstall Yarn"
+        if: ${{env.ACT}}
+        run: npm uninstall -g yarn
+
+  deploy-npm:
+    name: "Publish to NPM 🚀"
+    environment: Deploy
+    runs-on: ubuntu-latest
+    permissions: write-all
+    needs: build
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+      - name: "Load Artifacts"
+        uses: actions/download-artifact@v4
+      - name: "Setup Node v${{ vars.NODE_VERSION }}"
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+          registry-url: "https://registry.npmjs.org"
+          token: ${{ secrets.NPM_TOKEN }}
+          always-auth: true
+      - name: "[ACT] Install Yarn"
+        if: ${{env.ACT}}
+        run: npm install -g yarn
+      - name: "Install Packages"
+        run: yarn install
+      - name: ${{fromJSON('{"false":"Publish Package (Dry Run)","true":"Publish Package"}')[!env.ACT]}}
+        if: ${{!env.ACT}}
+        run: yarn publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: "[ACT] Uninstall Yarn"
+        if: ${{env.ACT}}
+        run: npm uninstall -g yarn
+
+  deploy-github:
+    name: "Publish to GitHub 🚀"
+    environment: Deploy
+    runs-on: ubuntu-latest
+    permissions: write-all
+    needs: build
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+      - name: "Load Artifacts"
+        uses: actions/download-artifact@v4
+      - name: "Setup Node v${{ vars.NODE_VERSION }}"
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+          registry-url: "https://npm.pkg.github.com"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          always-auth: true
+      - name: "[ACT] Install Yarn"
+        if: ${{env.ACT}}
+        run: npm install -g yarn
+      - name: "Install Packages"
+        run: yarn install
+      - name: ${{fromJSON('{"false":"Publish Package (Dry Run)","true":"Publish Package"}')[!env.ACT]}}
+        if: ${{!env.ACT}}
+        run: yarn publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: "[ACT] Uninstall Yarn"
+        if: ${{env.ACT}}
+        run: npm uninstall -g yarn

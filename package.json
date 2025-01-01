@@ -1,0 +1,56 @@
+{
+  "name": "@gavinhsmith/--package-name--",
+  "version": "1.0.0",
+  "description": "--package-description--",
+  "author": "gavinhsmith <me@gavinhsmith.com> (https://gavinhsmith.com)",
+  "license": "MIT",
+  "keywords": [],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavinhsmith/--package-name--.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gavinhsmith/--package-name--/issues"
+  },
+  "homepage": "https://github.com/gavinhsmith/--package-name--#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "nodemon": "^3.1.9",
+    "npm-run-all": "^4.1.5",
+    "replace-in-files-cli": "^3.0.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.2"
+  },
+  "scripts": {
+    "lint:module": "eslint ./src/module",
+    "lint:tests": "eslint ./src/tests",
+    "lint": "eslint ./src",
+    "build:module:clean": "rimraf ./dist",
+    "build:module:ts": "tsc --project ./config/tsconfig.build.json",
+    "build:module:types": "tsc --project ./config/tsconfig.types.json",
+    "build:module": "npm-run-all lint:module build:module:clean build:module:ts build:module:types",
+    "build:tests:clean": "rimraf ./tests",
+    "build:tests:ts": "tsc --project ./config/tsconfig.test.json",
+    "build:tests:imports": "replace-in-files --ignore-case --string=@this --replacement=../dist/index.js ./tests/*.js",
+    "build:tests": "npm-run-all build:tests:clean lint:tests build:tests:ts build:tests:imports",
+    "build": "npm-run-all build:module build:tests",
+    "test:workflow:ci": "act push -s GITHUB_TOKEN --matrix node:22 --matrix os:ubuntu-latest",
+    "test:workflow": "npm-run-all test:workflow:ci",
+    "test": "node ./tests/test.js",
+    "dev:build:module": "tsc --project ./config/tsconfig.build.json --watch",
+    "dev:build:tests": "tsc --project ./config/tsconfig.test.json --watch",
+    "dev:nodemon": "nodemon --config ./config/nodemon.json ./tests/test.js",
+    "dev": "npm-run-all build:module build:tests --parallel dev:build:module dev:build:tests dev:nodemon --print-label"
+  }
+}
