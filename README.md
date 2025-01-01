@@ -23,19 +23,11 @@ Make sure you update the README. If your editor supports find and replace, some 
 
 Use [shields.io](https://shields.io) to generate some badges.
 
-Examples:
+These are the badges shipped with this template:
 
-![Static Badge](https://img.shields.io/badge/null-%3Cpackage%20version%20here%3E-null?style=flat-square&label=NPM%20Version&labelColor=cc3838&color=f0f0f0)
-
-`![NPM Version](https://img.shields.io/npm/v/--package-name--?style=flat-square&label=NPM%20Version&labelColor=cc3838&color=f0f0f0)`
-
-![Static Badge](https://img.shields.io/badge/null-%3C18%20month%20package%20downloads%3E-null?style=flat-square&label=NPM%20Downloads&labelColor=cc3838&color=f0f0f0)
-
-`![NPM Downloads](https://img.shields.io/npm/d18m/--package-name--?style=flat-square&label=NPM%20Downloads&labelColor=cc3838&color=f0f0f0)`
-
-![Static Badge](https://img.shields.io/badge/null-%3Cpackage%20licence%3E-null?style=flat-square&label=Licence&color=f0f0f0)
-
-`![License](https://img.shields.io/github/license/gavinhsmith/--package-name--?style=flat-square&label=Licence&color=f0f0f0)`
+![NPM Version](https://img.shields.io/badge/null-%3Cpackage%20version%20here%3E-null?style=flat-square&label=NPM%20Version&labelColor=cc3838&color=f0f0f0)
+![NPM Downloads](https://img.shields.io/badge/null-%3C18%20month%20package%20downloads%3E-null?style=flat-square&label=NPM%20Downloads&labelColor=cc3838&color=f0f0f0)
+![License](https://img.shields.io/badge/null-%3Cpackage%20licence%3E-null?style=flat-square&label=Licence&color=f0f0f0)
 
 ### What Now?
 
@@ -46,6 +38,10 @@ Remove everything above the line from your README, and your good to go.
 # --package-name--
 
 --package-description--
+
+![NPM Version](https://img.shields.io/npm/v/--package-name--?style=flat-square&label=NPM%20Version&labelColor=cc3838&color=f0f0f0)
+![NPM Downloads](https://img.shields.io/npm/d18m/--package-name--?style=flat-square&label=NPM%20Downloads&labelColor=cc3838&color=f0f0f0)
+![License](https://img.shields.io/github/license/gavinhsmith/--package-name--?style=flat-square&label=Licence&color=f0f0f0)
 
 ## Install
 
