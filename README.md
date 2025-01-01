@@ -1,6 +1,6 @@
 # Template NPM Package
 
-Template for a new NPM package powered by TypeScript and ESLint.
+Template for a new NPM package powered by TypeScript and ESLint with docs generated using TypeDoc.
 
 ## Pre-Flight
 
@@ -12,7 +12,7 @@ In your repo's environment settings, create a new environment called `Deploy`. T
 
 ### README
 
-Make sure you update the README. If your editor supports find and replace, some `{{tags}}` are standardized for an easier time updating. Tags are as follows:
+Make sure you update the README. If your editor supports find and replace, some `--tags--` are standardized for an easier time updating. Tags are as follows:
 
 |            Tag            |          What For          |
 | :-----------------------: | :------------------------: |

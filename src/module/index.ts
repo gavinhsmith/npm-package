@@ -1,10 +1,10 @@
 /**
- * Template for a basic ES module.
- *
- * @description This is a basic ES module.
- *
+ * Template for a Basic ES2023 module.
  * @author gavinhsmith
- * @version 1.0.0
+ *
+ * Template for a new NPM package powered by TypeScript and ESLint with docs generated using TypeDoc.
+ *
+ * @module --package-name--
  */
 
 import getDateNow from "./lib/getDateNow.js";
@@ -17,18 +17,19 @@ export const DATE_AT_INIT = getDateNow();
  * @param overrides Override the values used in the string.
  * @returns A fancy string.
  */
-export default function getTimeString(
-  override?: [Date?, number?, Date?]
-): string {
+export function getTimeString(overrides?: [Date?, number?, Date?]): string {
   let timeNow = getDateNow();
   let timeSenseStart = timeNow.getTime() - DATE_AT_INIT.getTime();
   let timeInit = DATE_AT_INIT;
 
-  if (override != null && Array.isArray(override)) {
-    timeNow = override[0] ?? timeNow;
-    timeSenseStart = override[1] ?? timeSenseStart;
-    timeInit = override[2] ?? timeInit;
+  if (overrides != null && Array.isArray(overrides)) {
+    timeNow = overrides[0] ?? timeNow;
+    timeSenseStart = overrides[1] ?? timeSenseStart;
+    timeInit = overrides[2] ?? timeInit;
   }
 
   return `The time right now is ${timeNow.toString()}, which is ${timeSenseStart} milliseconds after the module was loaded ${timeInit.toString()}`;
 }
+
+// Export Module
+export default getTimeString;
