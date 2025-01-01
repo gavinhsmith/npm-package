@@ -47,13 +47,13 @@ Remove everything above the line from your README, and your good to go.
 
 Install `--package-name--` via your favorite package manager, I would assume.
 
-### NPM
+### [NPM](https://www.npmjs.com/package/@gavinhsmith/--package-name--)
 
 ```shell
 npm install --package-name--
 ```
 
-### Yarn
+### [Yarn](https://yarnpkg.com/package?q=%40gavinhsmith&name=%40gavinhsmith%2F--package-name--)
 
 ```shell
 yarn add --package-name--
