@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../dist",
     "sourceMap": true,
-    "sourceRoot": "https://raw.githubusercontent.com/gavinhsmith/--package-name--/refs/heads/release/src/module/"
+    "sourceRoot": "https://raw.githubusercontent.com/gavinhsmith/--package-name--/refs/heads/main/src/module/"
   },
   "include": ["../src/module/**/*"]
 }
