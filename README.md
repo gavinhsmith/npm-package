@@ -53,7 +53,7 @@ Install `--package-name--` via your favorite package manager, I would assume.
 npm install --package-name--
 ```
 
-### [Yarn](https://yarnpkg.com/package?q=%40gavinhsmith&name=%40gavinhsmith%2F--package-name--)
+### [Yarn](https://yarnpkg.com/package?name=%40gavinhsmith%2F--package-name--)
 
 ```shell
 yarn add --package-name--
