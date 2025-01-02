@@ -8,7 +8,11 @@ Look at the following before begining development.
 
 ### Repo Environment
 
-In your repo's environment settings, create a new environment called `Deploy`. This is the environment that contains your **NPM Key** and **Node Target Version** during deployment. Make a new secret called `NPM_TOKEN` with an NPM Token (see [NPM Docs](https://docs.npmjs.com/creating-and-viewing-access-tokens) for help), and a new variable called `NODE_VERSION` and set it to be whatever version of node your deployment build should target.
+In your repo's environment settings, create a new environment called `Deploy`. This is the environment that contains your **NPM Key** and **Node Target Version** during deployment of your packages. Make a new secret called `NPM_TOKEN` with an NPM Token (see [NPM Docs](https://docs.npmjs.com/creating-and-viewing-access-tokens) for help). In your repo's full environment settings, create a new variable called `NODE_VERSION` and set it to be whatever version of node your deployment build should target.
+
+### Pages
+
+If you would like to deploy your docs to GutHub Pages, initiate pages in your repo settings to use GitHub Actions. This should be all the config you need.
 
 ### README
 
