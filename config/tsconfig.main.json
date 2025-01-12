@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "removeComments": false,
+
+    "declaration": true,
+    "sourceMap": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "sourceRoot": "https://raw.githubusercontent.com/gavinhsmith/simpledb/refs/heads/main/src/module/"
+  },
+  "exclude": ["../src/tests"],
+  "include": ["../src/module"]
+}

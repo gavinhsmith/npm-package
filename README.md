@@ -33,6 +33,10 @@ These are the badges shipped with this template:
 ![NPM Downloads](https://img.shields.io/badge/null-%3C18%20month%20package%20downloads%3E-null?style=flat-square&label=NPM%20Downloads&labelColor=cc3838&color=f0f0f0)
 ![License](https://img.shields.io/badge/null-%3Cpackage%20licence%3E-null?style=flat-square&label=Licence&color=f0f0f0)
 
+### Release Tags
+
+By default, this module starts at version **0.1.0-beta.1** with the **beta** tag. When you wish to move to release, remove the `--tag=beta` paramaters from [ci.yml](https://github.com/gavinhsmith/npm-package/blob/main/.github/workflows/ci.yml) and update your version accordingly.
+
 ### What Now?
 
 Remove everything above the line from your README, and your good to go.

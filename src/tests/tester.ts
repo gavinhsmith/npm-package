@@ -3,7 +3,7 @@
 /** A subtest function. */
 type Subtest = [
   string,
-  (pass: () => void, fail: (reason: string) => void) => void
+  (pass: () => void, fail: (reason: string) => void) => void,
 ];
 
 /** An error that is thrown when a subtest fails. */
@@ -22,39 +22,38 @@ class TestFailedError extends Error {
   }
 }
 
-/** A test that will be run. */
-export default class Test {
-  private name: string;
-  private subtests: Subtest[];
+type Test = {
+  run: () => Promise<void>;
+};
 
-  constructor(name: string, ...subtests: Subtest[]) {
-    this.name = name;
-    this.subtests = subtests;
-  }
+type TestConstructor = (name: string, ...subtests: Subtest[]) => Test;
 
-  /**
-   * Runs all the subtests.
-   * @returns A promise that resolves if passed, or rejects if failed.
-   */
-  public run(): Promise<void> {
-    return new Promise((pass, fail) => {
-      const promises: Promise<void>[] = [];
+export const Test: TestConstructor = (name, ...subtests) => {
+  return {
+    run: () => {
+      return new Promise((pass, fail) => {
+        const promises: Promise<void>[] = [];
 
-      for (const subtest of this.subtests) {
-        promises.push(
-          new Promise((pass, fail) => {
-            new Promise<void>(subtest[1]).then(pass).catch((reason) => {
-              fail(new SubtestFailedError(subtest[0], reason));
-            });
+        for (const subtest of subtests) {
+          promises.push(
+            new Promise((subtestPass, subtestFail) => {
+              new Promise<void>(subtest[1])
+                .then(subtestPass)
+                .catch((error: string) => {
+                  subtestFail(new SubtestFailedError(subtest[0], error));
+                });
+            }),
+          );
+        }
+
+        Promise.all(promises)
+          .then(() => {
+            pass();
           })
-        );
-      }
-
-      Promise.all(promises)
-        .then(() => pass())
-        .catch((error: SubtestFailedError) => {
-          fail(new TestFailedError(this.name, error));
-        });
-    });
-  }
-}
+          .catch((error: SubtestFailedError) => {
+            fail(new TestFailedError(name, error));
+          });
+      });
+    },
+  };
+};

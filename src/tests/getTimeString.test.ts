@@ -1,28 +1,28 @@
 // (1) OPTIONAL: These are for my test implementation, not required for you :P.
-import Test from "./tester.js";
-
 // (2) Import your module for the test.
-import getTimeString, { DATE_AT_INIT } from "@this";
+import { dateAtInit, getTimeString } from "../module";
+import { Test } from "./tester.js";
 
 // (3) Design your test. This should be standardized. I like to use promises.
 
-/** test */
-export const getTimeStringTest = new Test("getTimeString", [
+/** Test getTimeString(). */
+export const getTimeStringTest = Test("getTimeString", [
   "testResult",
   (pass, fail) => {
     const timeNow = new Date();
 
-    const expected = `The time right now is ${timeNow.toString()}, which is ${
-      timeNow.getTime() - DATE_AT_INIT.getTime()
-    } milliseconds after the module was loaded ${DATE_AT_INIT.toString()}`;
-    const actual = getTimeString([
-      timeNow,
-      timeNow.getTime() - DATE_AT_INIT.getTime(),
-    ]);
+    const expected = `The time right now is ${timeNow.toString()}, which is ${String(
+      timeNow.getTime() - dateAtInit.getTime(),
+    )} milliseconds after the module was loaded ${dateAtInit.toString()}`;
+    const actual = getTimeString({
+      dateNow: timeNow,
+      timeSenseStart: timeNow.getTime() - dateAtInit.getTime(),
+    });
 
-    if (actual != expected) fail("Strings not equal");
-
-    pass();
+    if (actual === expected) {
+      pass();
+    } else {
+      fail("Strings not equal");
+    }
   },
 ]);
-export default getTimeStringTest;
