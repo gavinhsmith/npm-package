@@ -36,10 +36,10 @@
     "typescript": "^5.7.3"
   },
   "scripts": {
+    "lint": "eslint",
     "build:module:clean": "rimraf ./dist ./docs",
-    "build:module:lint": "eslint",
     "build:module:compile": "tsc && tsc --project ./config/tsconfig.main.json",
-    "build": "npm-run-all build:module:clean build:module:lint build:module:compile --print-label",
+    "build": "npm-run-all build:module:clean lint build:module:compile --print-label",
     "build:docs:clean": "rimraf ./docs",
     "build:docs:compile": "typedoc --options ./config/typedoc.main.json && typedoc --options ./config/typedoc.md.json",
     "build:docs": "npm-run-all build:docs:clean build:docs:compile",

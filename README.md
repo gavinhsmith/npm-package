@@ -88,7 +88,13 @@ Package can be configed, somehow.
 // Import your package.
 import package from "--package-name--";
 
-//
+// Configure your package.
+package.configure({
+  foo: "bar",
+  fiz: ["baz", "some_other_option"],
+});
+
+// Show your examples.
 package.doSomething();
 package.doSomethingElse();
 ```
@@ -103,6 +109,10 @@ package.doSomethingElse();
 
 ## Contributing
 
-Clone the repository, and run `npm i` or `yarn` to install the dependancies and build the module. Run module tests via the `test` script in package.json.
+Clone the repository, and run `npm i` or `yarn` to install the dependancies. Lint the module with the `lint` script in package.json, build the module with `build`, and run module tests with `test`.
 
 Workflow tests require [act](https://github.com/nektos/act). You **do not need** this for module development, as workflow tests are not run during CI.
+
+## Copywrite
+
+(c) 2025 gavinhsmith
