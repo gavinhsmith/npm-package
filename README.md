@@ -112,7 +112,3 @@ package.doSomethingElse();
 Clone the repository, and run `npm i` or `yarn` to install the dependancies. Lint the module with the `lint` script in package.json, build the module with `build`, and run module tests with `test`.
 
 Workflow tests require [act](https://github.com/nektos/act). You **do not need** this for module development, as workflow tests are not run during CI.
-
-## Copywrite
-
-(c) 2025 gavinhsmith
