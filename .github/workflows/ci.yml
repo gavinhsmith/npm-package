@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     name: "CI Testing"
-    if: github.repository == '--package-author--/--package-name--'
+    if: github.repository == '--package-author--/--package-repo--'
     strategy:
       matrix:
         os: [ubuntu-latest]

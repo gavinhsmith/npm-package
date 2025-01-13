@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: "Build Module 🚧"
-    if: github.repository == '--package-author--/--package-name--'
+    if: github.repository == '--package-author--/--package-repo--'
     environment: Deploy
     runs-on: ubuntu-latest
     steps:

@@ -13,7 +13,7 @@ permissions:
 jobs:
   build:
     name: "Build Docs 🚧"
-    if: github.repository == '--package-author--/--package-name--'
+    if: github.repository == '--package-author--/--package-repo--'
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout Repository"

@@ -14,9 +14,9 @@ In your repo's environment settings, create a new environment called `Deploy`. T
 
 If you would like to deploy your docs to GutHub Pages, initiate pages in your repo settings to use GitHub Actions. This should be all the config you need.
 
-### README
+### README and hard references.
 
-Make sure you update the README. If your editor supports find and replace, some `--tags--` are standardized for an easier time updating. Tags are as follows, and should be replaced in order:
+Make sure you update the README and references. If your editor supports find and replace, some `--tags--` are standardized for an easier time updating things like workflows and other important references. Tags are as follows, and should be replaced in order:
 
 |            Tag            |          What For           |
 | :-----------------------: | :-------------------------: |
@@ -37,7 +37,7 @@ These are the badges shipped with this template:
 
 ### Release Tags
 
-By default, this module starts at version **0.1.0-beta.1** with the **beta** tag. When you wish to move to release, remove the `--tag=beta` paramaters from [ci.yml](https://github.com/--package-name--/--package-repo--/blob/main/.github/workflows/ci.yml) and update your version accordingly.
+By default, this module starts at version **0.1.0-beta.1** with the **beta** tag. When you wish to move to release, remove the `--tag=beta` paramaters from [ci.yml](https://github.com/--package-author--/--package-repo--/blob/main/.github/workflows/ci.yml) and update your version accordingly.
 
 ### What Now?
 
