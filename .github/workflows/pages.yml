@@ -13,18 +13,18 @@ permissions:
 jobs:
   build:
     name: "Build Docs 🚧"
-    if: github.repository == 'gavinhsmith/--package-name--'
+    if: github.repository == '--package-author--/--package-name--'
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout Repository"
         uses: actions/checkout@v4
+      - name: "Activate Corepack"
+        run: corepack enable
       - name: "Setup Node v${{ vars.NODE_VERSION }}"
         uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION }}
-      - name: "[ACT] Install Yarn"
-        if: ${{env.ACT}}
-        run: npm install -g yarn
+          cache: yarn
       - name: "Install Packages"
         run: yarn install
       - name: "Build Docs"
@@ -34,9 +34,6 @@ jobs:
         with:
           name: docs
           path: docs
-      - name: "[ACT] Uninstall Yarn"
-        if: ${{env.ACT}}
-        run: npm uninstall -g yarn
 
   deploy-pages:
     name: "Deploy to Pages 📚"

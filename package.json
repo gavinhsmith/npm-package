@@ -1,26 +1,24 @@
 {
-  "name": "@gavinhsmith/--package-name--",
+  "name": "--package-name--",
   "version": "0.1.0-beta.1",
   "description": "--package-description--",
-  "author": "gavinhsmith <me@gavinhsmith.com> (https://gavinhsmith.com)",
+  "author": "--package-author-- <you@example.com> (https://example.com)",
   "license": "MIT",
   "keywords": [],
   "main": "./dist/module/index.js",
   "types": "./dist/module/index.d.ts",
-  "private": false,
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gavinhsmith/--package-name--.git"
+    "url": "git+https://github.com/--package-author--/--package-repo--.git"
   },
   "bugs": {
-    "url": "https://github.com/gavinhsmith/--package-name--/issues"
+    "url": "https://github.com/--package-author--/--package-repo--/issues"
   },
-  "homepage": "https://gavinhsmith.github.io/--package-name--",
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
-  "dependencies": {},
+  "homepage": "https://--package-author--.github.io/--package-repo--",
+  "packageManager": "yarn@4.6.0",
   "devDependencies": {
     "@types/node": "^22.10.5",
     "@typhonjs-typedoc/typedoc-theme-dmt": "^0.3.1",

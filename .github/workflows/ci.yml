@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     name: "CI Testing"
-    if: github.repository == 'gavinhsmith/--package-name--'
+    if: github.repository == '--package-author--/--package-name--'
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -22,19 +22,16 @@ jobs:
     steps:
       - name: "Checkout Repository"
         uses: actions/checkout@v4
+      - name: "Activate Corepack"
+        run: corepack enable
       - name: "Setup Node v${{ matrix.node }} for ${{ matrix.os }}"
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - name: "[ACT] Install Yarn"
-        if: ${{env.ACT}}
-        run: npm install -g yarn
+          cache: yarn
       - name: "Install Packages"
         run: yarn install
       - name: "Build Module/Tests"
         run: yarn run build
       - name: "Run Tests"
         run: yarn run test
-      - name: "[ACT] Uninstall Yarn"
-        if: ${{env.ACT}}
-        run: npm uninstall -g yarn

@@ -16,12 +16,14 @@ If you would like to deploy your docs to GutHub Pages, initiate pages in your re
 
 ### README
 
-Make sure you update the README. If your editor supports find and replace, some `--tags--` are standardized for an easier time updating. Tags are as follows:
+Make sure you update the README. If your editor supports find and replace, some `--tags--` are standardized for an easier time updating. Tags are as follows, and should be replaced in order:
 
-|            Tag            |          What For          |
-| :-----------------------: | :------------------------: |
-|    `--package-name--`     |    Name of the package     |
-| `--package-description--` | Description of the package |
+|            Tag            |          What For           |
+| :-----------------------: | :-------------------------: |
+|    `--package-repo--`     |    Repo of the package.     |
+|    `--package-name--`     |    Name of the package.     |
+|   `--package-author--`    |    Name of the package.     |
+| `--package-description--` | Description of the package. |
 
 ### Badges
 
@@ -35,7 +37,7 @@ These are the badges shipped with this template:
 
 ### Release Tags
 
-By default, this module starts at version **0.1.0-beta.1** with the **beta** tag. When you wish to move to release, remove the `--tag=beta` paramaters from [ci.yml](https://github.com/gavinhsmith/npm-package/blob/main/.github/workflows/ci.yml) and update your version accordingly.
+By default, this module starts at version **0.1.0-beta.1** with the **beta** tag. When you wish to move to release, remove the `--tag=beta` paramaters from [ci.yml](https://github.com/--package-name--/--package-repo--/blob/main/.github/workflows/ci.yml) and update your version accordingly.
 
 ### What Now?
 
@@ -47,21 +49,21 @@ Remove everything above the line from your README, and your good to go.
 
 --package-description--
 
-[![NPM Version](https://img.shields.io/npm/v/%40gavinhsmith%2F--package-name--?style=flat-square&label=NPM%20Version&labelColor=cc3838&color=f0f0f0)](https://www.npmjs.com/package/@gavinhsmith/--package-name--)
-[![NPM Downloads](https://img.shields.io/npm/d18m/%40gavinhsmith%2F--package-name--?style=flat-square&label=NPM%20Downloads&labelColor=cc3838&color=f0f0f0)](https://www.npmjs.com/package/@gavinhsmith/--package-name--)
-[![License](https://img.shields.io/github/license/gavinhsmith/--package-name--?style=flat-square&label=Licence&color=f0f0f0)](https://github.com/gavinhsmith/--package-name--?tab=MIT-1-ov-file)
+[![NPM Version](https://img.shields.io/npm/v/--package-name--?style=flat-square&label=NPM%20Version&labelColor=cc3838&color=f0f0f0)](https://www.npmjs.com/package/--package-name--)
+[![NPM Downloads](https://img.shields.io/npm/d18m/--package-name--?style=flat-square&label=NPM%20Downloads&labelColor=cc3838&color=f0f0f0)](https://www.npmjs.com/package/--package-name--)
+[![License](https://img.shields.io/github/license/--package-author--/--package-repo--?style=flat-square&label=Licence&color=f0f0f0)](https://github.com/--package-author--/--package-repo--?tab=MIT-1-ov-file)
 
 ## Install
 
 Install `--package-name--` via your favorite package manager, I would assume.
 
-### [NPM](https://www.npmjs.com/package/@gavinhsmith/--package-name--)
+### [NPM](https://www.npmjs.com/package/--package-name--)
 
 ```shell
 npm install --package-name--
 ```
 
-### [Yarn](https://yarnpkg.com/package?name=%40gavinhsmith%2F--package-name--)
+### [Yarn](https://yarnpkg.com/package?name=--package-name--)
 
 ```shell
 yarn add --package-name--

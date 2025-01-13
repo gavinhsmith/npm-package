@@ -7,7 +7,7 @@
     "sourceMap": true,
     "emitDeclarationOnly": true,
     "declarationMap": true,
-    "sourceRoot": "https://raw.githubusercontent.com/gavinhsmith/simpledb/refs/heads/main/src/module/"
+    "sourceRoot": "https://raw.githubusercontent.com/--package-author--/--package-repo--/refs/heads/main/src/module/"
   },
   "exclude": ["../src/tests"],
   "include": ["../src/module"]
